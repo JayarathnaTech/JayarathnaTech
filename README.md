@@ -1,75 +1,41 @@
-# React + TypeScript + Vite
+# JayarathnaTech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official repository for the **JayarathnaTech** corporate platform. We are a forward-thinking technology partner dedicated to building high-performance digital products, enterprise web software, and scalable modern web ecosystems.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Enterprise-Grade Platform Highlights
+* **Stunning UI/UX Presentation:** Immersive, modern user interfaces tailored to represent global business standards.
+* **Flawless Multi-Device Adaptability:** Engineered to deliver a uniform, high-fidelity experience across screens of all sizes.
+* **Top-Tier Performance:** High-speed data rendering, asset optimization, and industry-leading loading efficiency.
+* **Secure Architecture:** Built following strict secure-coding standards to ensure data integrity and user protection.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Our Core Technological Expertise
+We employ modern, production-ready ecosystems to bring corporate digital visions to life:
+* **Architecture:** Next.js / React.js / vue.js / Laravel
+* **Styling Framework:** Tailwind CSS
+* **Data Layer Security:** Encrypted APIs & Relational Database Infrastructures
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Solutions We Deliver
+We build custom digital infrastructures designed to scale enterprises:
+1. **Corporate Business Websites:** Professional, branding-focused web setups for modern businesses.
+2. **E-Commerce & Retail Engines:** Highly secure payment processing systems and inventory modules.
+3. **Custom Software & SaaS:** Bespoke software platforms engineered to automate internal workflows.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Let's Build Something Exceptional Together
+Are you looking to scale your business operations with a secure, modern digital infrastructure? Get in touch with our engineering and design teams today.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **📧 Email Intercom:** support@jayarathnatech.com
+* **🌐 Corporate Portal:** [Visit JayarathnaTech Official Website](https://jayarathnatech.com)
 
-```
+---
+### Proprietary Software & Legal Notice
+This repository contains proprietary software. Code duplication, unauthorized redistribution, design cloning, or commercial derivatives of these assets without explicit prior written authorization from JayarathnaTech management is strictly prohibited. Legal protections are actively enforced via copyright frameworks.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+<center>© 2026 JayarathnaTech. All rights reserved.</center>
