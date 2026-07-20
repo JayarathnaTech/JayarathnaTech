@@ -3,6 +3,8 @@ import Home from "../pages/Home.tsx";
 import About from "../pages/About.tsx";
 import Services from "../pages/Services.tsx";
 import Contact from "../pages/Contact.tsx";
+import PrivacyPolicy from "../pages/PrivacyPolicy.tsx";
+import TermsOfService from "../pages/TermsOfService.tsx";
 import RootLayout from "../layout/RootLayout.tsx";
 
 export const router = createBrowserRouter([
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact/>
+            },
+            {
+                path: '/privacy',
+                element: <PrivacyPolicy/>
+            },
+            {
+                path: '/terms',
+                element: <TermsOfService/>
             }
         ]
     }
