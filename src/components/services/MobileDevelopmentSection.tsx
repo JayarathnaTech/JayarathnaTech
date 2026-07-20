@@ -40,7 +40,7 @@ const MobileDevelopmentSection: React.FC = () => {
 
                     {/* Visual Mockup/Illustration */}
                     <div className="lg:col-span-5 relative flex justify-center">
-                        <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-purple-500/20 to-pink-500/10 blur-xl pointer-events-none"></div>
+                        <div className="absolute -inset-4 rounded-3xl bg-linear-to-tr from-purple-500/20 to-pink-500/10 blur-xl pointer-events-none"></div>
                         <div className="relative rounded-3xl border border-slate-800 bg-slate-900/50 p-6 shadow-2xl backdrop-blur-sm w-64 h-96 flex flex-col justify-between">
                             <div className="w-full flex justify-between items-center pb-2 border-b border-slate-800">
                                 <span className="text-[10px] font-mono text-slate-500">12:00 PM</span>
