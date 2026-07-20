@@ -10,7 +10,6 @@ import AdminDashboard from "../pages/AdminDashboard.tsx";
 import NotFound from "../pages/NotFound.tsx";
 import RootLayout from "../layout/RootLayout.tsx";
 
-// basename must match the GitHub Pages repository subdirectory (vite base config)
 export const router = createBrowserRouter([
     {
         path: '/',

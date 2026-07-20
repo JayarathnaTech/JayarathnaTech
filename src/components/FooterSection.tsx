@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FooterSection: React.FC = () => {
     return (
@@ -54,20 +55,20 @@ const FooterSection: React.FC = () => {
                     <div className="space-y-4">
                         <h4 className="text-white font-bold text-sm tracking-wider uppercase">Navigation</h4>
                         <ul className="space-y-2 text-xs">
-                            <li><a href="/" className="hover:text-indigo-400 transition-colors">Home</a></li>
-                            <li><a href="/about" className="hover:text-indigo-400 transition-colors">About Agency</a></li>
-                            <li><a href="/services" className="hover:text-indigo-400 transition-colors">Services</a></li>
-                            <li><a href="/contact" className="hover:text-indigo-400 transition-colors">Contact Us</a></li>
+                            <li><Link to="/" className="hover:text-indigo-400 transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-indigo-400 transition-colors">About Agency</Link></li>
+                            <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Services</Link></li>
+                            <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 
                     <div className="space-y-4">
                         <h4 className="text-white font-bold text-sm tracking-wider uppercase">Capabilities</h4>
                         <ul className="space-y-2 text-xs">
-                            <li><a href="/services" className="hover:text-indigo-400 transition-colors">Custom Web Apps</a></li>
-                            <li><a href="/services" className="hover:text-indigo-400 transition-colors">Mobile Applications</a></li>
-                            <li><a href="/services" className="hover:text-indigo-400 transition-colors">Cloud Architecture</a></li>
-                            <li><a href="/services" className="hover:text-indigo-400 transition-colors">UI/UX Design Systems</a></li>
+                            <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Custom Web Apps</Link></li>
+                            <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Mobile Applications</Link></li>
+                            <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Cloud Architecture</Link></li>
+                            <li><Link to="/services" className="hover:text-indigo-400 transition-colors">UI/UX Design Systems</Link></li>
                         </ul>
                     </div>
 
@@ -92,9 +93,9 @@ const FooterSection: React.FC = () => {
                         © {new Date().getFullYear()} JayarathnaTech. All rights reserved. Built with precision and care.
                     </div>
                     <div className="flex space-x-6">
-                        <a href="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</a>
-                        <a href="/terms" className="hover:text-indigo-400 transition-colors">Terms of Service</a>
-                        <a href="/contact" className="hover:text-indigo-400 transition-colors">Contact</a>
+                        <Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-indigo-400 transition-colors">Terms of Service</Link>
+                        <Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link>
                     </div>
                 </div>
             </div>
