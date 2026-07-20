@@ -3,7 +3,7 @@ import FooterSection from '../../components/FooterSection';
 
 test('FooterSection renders brand name in copyright', () => {
     render(<FooterSection />);
-    expect(screen.getByText(/JayarathnaTech/i)).toBeDefined();
+    expect(screen.getAllByText(/JayarathnaTech/i).length).toBeGreaterThan(0);
 });
 
 test('FooterSection renders current year in copyright', () => {
@@ -26,5 +26,5 @@ test('FooterSection renders Contact link', () => {
     render(<FooterSection />);
     const contactLink = screen.getByText('Contact').closest('a');
     expect(contactLink).toBeDefined();
-    expect((contactLink as HTMLAnchorElement).href).toContain('#contact');
+    expect((contactLink as HTMLAnchorElement).href).toContain('/contact');
 });
