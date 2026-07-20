@@ -4,7 +4,7 @@ import FooterSection from '../components/FooterSection';
 
 const Contact: React.FC = () => {
     return (
-        <div className="relative overflow-hidden bg-slate-950 pb-24 min-h-screen flex flex-col justify-between">
+        <div className="relative overflow-hidden bg-slate-950 pb-8 min-h-screen flex flex-col justify-between">
             {/* Background Glows */}
             <div className="absolute top-[-5%] right-[-10%] w-160 h-160 rounded-full bg-indigo-900/20 blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-[10%] left-[-10%] w-140 h-140 rounded-full bg-fuchsia-900/10 blur-[120px] pointer-events-none"></div>
