@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
                             <span className="text-xs text-slate-500 pl-4 font-mono select-none">jayarathnatech.com/analytics</span>
                         </div>
                         <img
-                            src="/dashboard_mockup.png"
+                            src={`${import.meta.env.BASE_URL}dashboard_mockup.png`}
                             alt="JayarathnaTech Platform Analytics Dashboard"
                             className="w-full h-auto object-cover rounded-lg shadow-inner max-h-105 transition-transform duration-500 hover:scale-[1.02]"
                         />
