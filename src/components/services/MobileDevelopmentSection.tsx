@@ -12,7 +12,7 @@ const MobileDevelopmentSection: React.FC = () => {
         <section className="relative py-16 px-6 border-t border-slate-900/60 bg-slate-950/10">
             <div className="container mx-auto max-w-5xl">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
+
                     {/* Content */}
                     <div className="lg:col-span-7 space-y-6">
                         <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">

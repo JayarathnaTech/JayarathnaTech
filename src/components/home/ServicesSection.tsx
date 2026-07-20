@@ -34,10 +34,10 @@ const ServicesSection: React.FC = () => {
             iconPath: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.95 17.95 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />,
         },
         {
-            title: 'AI Integrations',
-            description: 'Integration of customized Large Language Models (LLMs), semantic vector search engines, and intelligent decision systems.',
+            title: 'Mobile Applications',
+            description: 'Performant iOS and Android applications built with responsive navigation, native integrations, and smooth client-side interactions.',
             accentClass: 'bg-pink-500/10 text-pink-400 group-hover:bg-pink-600 group-hover:text-white',
-            iconPath: <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 21l8.982-8.983m-10.43 3.428-1.283 5.353 7.822-7.822m-7.822 1.83 5.353-1.282m-5.353 1.282-.54 2.252m0 0 4.093-4.093m0 0-1.282 5.353m-2.811-2.544 5.353-1.282" />,
+            iconPath: <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 2.25h7.5a2.25 2.25 0 0 1 2.25 2.25v15a2.25 2.25 0 0 1-2.25 2.25h-7.5A2.25 2.25 0 0 1 6 19.5v-15a2.25 2.25 0 0 1 2.25-2.25z M12 17.25h.008v.008H12v-.008z" />,
         },
         {
             title: 'UI/UX Design Systems',
