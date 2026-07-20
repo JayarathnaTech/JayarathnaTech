@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAgCy7pWivBfdvLu5z4-MrgOJzYtiFDFJo",
-    authDomain: "jayarathnatech-49463.firebaseapp.com",
-    projectId: "jayarathnatech-49463",
-    storageBucket: "jayarathnatech-49463.firebasestorage.app",
-    messagingSenderId: "243968983586",
-    appId: "1:243968983586:web:bc0eedc4987e5cadfb807b",
-    measurementId: "G-VKW70VTXN9"
+    apiKey:            import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain:        import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId:         import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket:     import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId:             import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId:     import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -18,9 +18,10 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 
-export const ADMIN_EMAILS = [
-    "nidurangajayarathna@gmail.com"
-];
+// Admin email comes from env so it is never hardcoded in the public repo
+export const ADMIN_EMAILS: string[] = [
+    (import.meta.env.VITE_ADMIN_EMAIL as string ?? '').toLowerCase(),
+].filter(Boolean);
 
 export let analytics: Analytics | undefined = undefined;
 
