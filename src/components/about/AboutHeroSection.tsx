@@ -9,7 +9,7 @@ const AboutHeroSection: React.FC = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
-                    <span className="text-xs font-semibold tracking-wider text-indigo-300 uppercase">New Company · Est. 2024</span>
+                    <span className="text-xs font-semibold tracking-wider text-indigo-300 uppercase">New Company · Est. 2026</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
                     About{' '}

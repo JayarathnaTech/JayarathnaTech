@@ -10,7 +10,7 @@ test('AboutHeroSection renders h1 containing company name', () => {
 
 test('AboutHeroSection renders status badge text', () => {
     render(<AboutHeroSection />);
-    expect(screen.getByText('New Company · Est. 2024')).toBeDefined();
+    expect(screen.getByText('New Company · Est. 2026')).toBeDefined();
 });
 
 test('AboutHeroSection renders description paragraph', () => {
