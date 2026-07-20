@@ -5,6 +5,8 @@ import Services from "../pages/Services.tsx";
 import Contact from "../pages/Contact.tsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy.tsx";
 import TermsOfService from "../pages/TermsOfService.tsx";
+import SubmitTestimonial from "../pages/SubmitTestimonial.tsx";
+import AdminDashboard from "../pages/AdminDashboard.tsx";
 import RootLayout from "../layout/RootLayout.tsx";
 
 export const router = createBrowserRouter([
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
             {
                 path: '/terms',
                 element: <TermsOfService/>
+            },
+            {
+                path: '/submit-testimonial/:token',
+                element: <SubmitTestimonial/>
+            },
+            {
+                path: '/admin',
+                element: <AdminDashboard/>
             }
         ]
     }
