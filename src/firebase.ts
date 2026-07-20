@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported, type Analytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAgCy7pWivBfdvLu5z4-MrgOJzYtiFDFJo",
@@ -14,6 +15,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+
+export const ADMIN_EMAILS = [
+    "nidurangajayarathna@gmail.com"
+];
 
 export let analytics: Analytics | undefined = undefined;
 
