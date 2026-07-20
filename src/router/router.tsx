@@ -7,8 +7,10 @@ import PrivacyPolicy from "../pages/PrivacyPolicy.tsx";
 import TermsOfService from "../pages/TermsOfService.tsx";
 import SubmitTestimonial from "../pages/SubmitTestimonial.tsx";
 import AdminDashboard from "../pages/AdminDashboard.tsx";
+import NotFound from "../pages/NotFound.tsx";
 import RootLayout from "../layout/RootLayout.tsx";
 
+// basename must match the GitHub Pages repository subdirectory (vite base config)
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -45,7 +47,11 @@ export const router = createBrowserRouter([
             {
                 path: '/admin',
                 element: <AdminDashboard/>
+            },
+            {
+                path: '*',
+                element: <NotFound/>
             }
         ]
     }
-])
+], { basename: '/JayarathnaTech' })
