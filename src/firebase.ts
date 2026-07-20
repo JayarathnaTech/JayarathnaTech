@@ -19,9 +19,9 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 
-// Admin email comes from env so it is never hardcoded in the public repo
+// Admin email comes from env, with the default admin as a safe fallback
 export const ADMIN_EMAILS: string[] = [
-    (import.meta.env.VITE_ADMIN_EMAIL as string ?? '').toLowerCase(),
+    (import.meta.env.VITE_ADMIN_EMAIL as string ?? 'nidurangajayarathna@gmail.com').toLowerCase(),
 ].filter(Boolean);
 
 export let analytics: Analytics | undefined = undefined;
