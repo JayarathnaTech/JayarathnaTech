@@ -32,8 +32,8 @@ vi.mock('firebase/firestore', () => ({
     query: vi.fn(),
     orderBy: vi.fn(),
     doc: vi.fn((_db: any, _col: string, id: string) => ({ id })),
-    deleteDoc: (ref: any) => mockDeleteDoc(ref),
-    setDoc: (ref: any, data: any) => mockSetDoc(ref, data),
+    deleteDoc: (ref: any) => (mockDeleteDoc as any)(ref),
+    setDoc: (ref: any, data: any) => (mockSetDoc as any)(ref, data),
     getDocs: vi.fn(() => Promise.resolve({
         forEach: (cb: any) => {
             cb({
