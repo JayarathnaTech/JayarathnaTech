@@ -21,7 +21,7 @@ const FounderSection: React.FC = () => {
                             <div className="relative">
                                 <div className="absolute -inset-1 rounded-full bg-linear-to-tr from-indigo-500 to-purple-500 opacity-40 blur-md"></div>
                                 <img
-                                    src="/founder.png"
+                                    src={`${import.meta.env.BASE_URL}founder.png`}
                                     alt="Niduranga Jayarathna — Founder of JayarathnaTech"
                                     className="relative h-36 w-36 rounded-full object-cover border-2 border-slate-700/60 shadow-xl"
                                 />
