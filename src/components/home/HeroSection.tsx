@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { collection, getCountFromServer } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 const HeroSection: React.FC = () => {
+    const [testimonialCount, setTestimonialCount] = useState<number | null>(null);
+
+    useEffect(() => {
+        const fetchTestimonialCount = async () => {
+            try {
+                const coll = collection(db, 'testimonials');
+                const snapshot = await getCountFromServer(coll);
+                setTestimonialCount(snapshot.data().count);
+            } catch (err) {
+                console.error('Error fetching testimonial count:', err);
+            }
+        };
+        fetchTestimonialCount();
+    }, []);
+
     return (
         <section className="relative pt-12 pb-20 md:pt-20 md:pb-32 px-6">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -44,8 +61,10 @@ const HeroSection: React.FC = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-900/60">
                         <div>
-                            <div className="text-3xl font-extrabold text-white">50+</div>
-                            <div className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Delivered Projects</div>
+                            <div className="text-3xl font-extrabold text-white">
+                                {testimonialCount !== null ? `${testimonialCount}+` : '0+'}
+                            </div>
+                            <div className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Client Reviews</div>
                         </div>
                         <div>
                             <div className="text-3xl font-extrabold text-indigo-400">99.9%</div>

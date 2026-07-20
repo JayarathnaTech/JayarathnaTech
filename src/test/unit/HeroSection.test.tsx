@@ -35,7 +35,7 @@ test('HeroSection Explore Expertise links to services', () => {
 
 test('HeroSection renders stats bar values', () => {
     render(<HeroSection />);
-    expect(screen.getByText('50+')).toBeDefined();
+    expect(screen.getByText('0+')).toBeDefined();
     expect(screen.getByText('99.9%')).toBeDefined();
     expect(screen.getByText('10M+')).toBeDefined();
     expect(screen.getByText('15+')).toBeDefined();
@@ -43,7 +43,7 @@ test('HeroSection renders stats bar values', () => {
 
 test('HeroSection renders stats bar labels', () => {
     render(<HeroSection />);
-    expect(screen.getByText('Delivered Projects')).toBeDefined();
+    expect(screen.getByText('Client Reviews')).toBeDefined();
     expect(screen.getByText('Client Satisfaction')).toBeDefined();
     expect(screen.getByText('Users Impacted')).toBeDefined();
     expect(screen.getByText('Global Tech Experts')).toBeDefined();
