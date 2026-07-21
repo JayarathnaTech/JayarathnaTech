@@ -21,7 +21,7 @@ test('FounderSection renders founder avatar image with correct alt', () => {
     render(<FounderSection />);
     const img = screen.getByAltText('Niduranga Jayarathna — Founder of JayarathnaTech');
     expect(img).toBeDefined();
-    expect((img as HTMLImageElement).src).toContain('founder.png');
+    expect((img as HTMLImageElement).src).toContain('founder.jpeg');
 });
 
 test('FounderSection renders section heading', () => {

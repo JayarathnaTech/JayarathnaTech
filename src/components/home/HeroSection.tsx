@@ -83,17 +83,21 @@ const HeroSection: React.FC = () => {
 
                 <div className="lg:col-span-5 relative flex justify-center items-center z-10">
                     <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-indigo-500 to-purple-600 opacity-25 blur-xl animate-pulse"></div>
-                    <div className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/50 p-2 shadow-2xl backdrop-blur-md max-w-full">
-                        <div className="flex items-center space-x-2 px-3 pb-3 pt-1 border-b border-slate-800/50">
+                    <div
+                        className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/50 p-2 shadow-2xl backdrop-blur-md max-w-full"
+                        draggable="false"
+                        onDragStart={(e) => e.preventDefault()}
+                    >
+                        <div className="flex items-center space-x-2 px-3 pb-3 pt-1 border-b border-slate-800/50 select-none">
                             <span className="h-3.5 w-3.5 rounded-full bg-rose-500/70 inline-block"></span>
                             <span className="h-3.5 w-3.5 rounded-full bg-amber-500/70 inline-block"></span>
                             <span className="h-3.5 w-3.5 rounded-full bg-emerald-500/70 inline-block"></span>
-                            <span className="text-xs text-slate-500 pl-4 font-mono select-none">jayarathnatech.com/analytics</span>
+                            <span className="text-xs text-slate-500 pl-4 font-mono select-none">jayarathnatech.com/solutions</span>
                         </div>
                         <img
-                            src={`${import.meta.env.BASE_URL}dashboard_mockup.png`}
+                            src={`${import.meta.env.BASE_URL}dashboard.png`}
                             alt="JayarathnaTech Platform Analytics Dashboard"
-                            className="w-full h-auto object-cover rounded-lg shadow-inner max-h-105 transition-transform duration-500 hover:scale-[1.02]"
+                            className="w-full h-auto object-cover rounded-lg shadow-inner max-h-105 transition-transform duration-500 hover:scale-[1.02] pointer-events-none select-none"
                         />
                     </div>
                 </div>
