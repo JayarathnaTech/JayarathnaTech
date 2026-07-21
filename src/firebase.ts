@@ -5,13 +5,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Provide safe fallback values for testing and build environments where env vars are not present
 const firebaseConfig = {
-    apiKey:            import.meta.env.VITE_FIREBASE_API_KEY || "mock-api-key-for-unit-tests",
-    authDomain:        import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mock-auth-domain",
-    projectId:         import.meta.env.VITE_FIREBASE_PROJECT_ID || "mock-project-id",
-    storageBucket:     import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mock-storage-bucket",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "mock-api-key-for-unit-tests",
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mock-auth-domain",
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "mock-project-id",
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mock-storage-bucket",
     messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "mock-sender-id",
-    appId:             import.meta.env.VITE_FIREBASE_APP_ID || "mock-app-id",
-    measurementId:     import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "mock-measurement-id",
+    appId: import.meta.env.VITE_FIREBASE_APP_ID || "mock-app-id",
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "mock-measurement-id",
 };
 
 const app = initializeApp(firebaseConfig);

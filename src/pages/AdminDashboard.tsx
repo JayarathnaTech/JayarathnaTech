@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { collection, query, orderBy, getDocs, deleteDoc, doc, setDoc } from 'firebase/firestore';
 import { auth, googleProvider, db, ADMIN_EMAILS } from '../firebase';
+import ProjectManager from '../components/admin/ProjectManager';
 
 interface Testimonial {
     id: string;
@@ -56,6 +57,8 @@ const AdminDashboard: React.FC = () => {
     const [testimonialsLoading, setTestimonialsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [deleteInProgress, setDeleteInProgress] = useState<string | null>(null);
+
+    const [activeTab, setActiveTab] = useState<'testimonials' | 'projects'>('testimonials');
 
     // Invite link state
     const [inviteLink, setInviteLink] = useState<InviteLink | null>(null);
@@ -253,7 +256,35 @@ const AdminDashboard: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-6 md:p-8 space-y-5">
+                        {/* Navigation Tabs */}
+                        <div className="flex border-b border-slate-800 space-x-6">
+                            <button
+                                onClick={() => setActiveTab('testimonials')}
+                                className={`pb-3 text-sm font-bold border-b-2 transition-all cursor-pointer ${
+                                    activeTab === 'testimonials'
+                                        ? 'border-indigo-500 text-indigo-400'
+                                        : 'border-transparent text-slate-400 hover:text-slate-200'
+                                }`}
+                            >
+                                Testimonials & Invites
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('projects')}
+                                className={`pb-3 text-sm font-bold border-b-2 transition-all cursor-pointer ${
+                                    activeTab === 'projects'
+                                        ? 'border-indigo-500 text-indigo-400'
+                                        : 'border-transparent text-slate-400 hover:text-slate-200'
+                                }`}
+                            >
+                                Portfolio Projects
+                            </button>
+                        </div>
+
+                        {activeTab === 'projects' ? (
+                            <ProjectManager />
+                        ) : (
+                            <>
+                                <div className="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-6 md:p-8 space-y-5">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div className="space-y-1">
                                     <h2 className="text-lg font-bold text-white flex items-center gap-2">
@@ -391,6 +422,8 @@ const AdminDashboard: React.FC = () => {
                                 </div>
                             )}
                         </div>
+                            </>
+                        )}
                     </div>
                 )}
             </div>
