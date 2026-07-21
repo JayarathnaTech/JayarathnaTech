@@ -53,7 +53,7 @@ test('HeroSection renders dashboard mockup image with correct alt text', () => {
     render(<HeroSection />);
     const img = screen.getByAltText('JayarathnaTech Platform Analytics Dashboard');
     expect(img).toBeDefined();
-    expect((img as HTMLImageElement).src).toContain('dashboard_mockup.png');
+    expect((img as HTMLImageElement).src).toContain('dashboard.png');
 });
 
 test('HeroSection renders status badge label', () => {
