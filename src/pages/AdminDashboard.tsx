@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { collection, query, orderBy, getDocs, deleteDoc, doc, setDoc } from 'firebase/firestore';
 import { auth, googleProvider, db, ADMIN_EMAILS } from '../firebase';
-import FooterSection from '../components/FooterSection';
 
 interface Testimonial {
     id: string;
@@ -174,7 +173,6 @@ const AdminDashboard: React.FC = () => {
         }
     };
 
-    // ── Loading ───────────────────────────────────────────────────────────────
     if (authLoading) {
         return (
             <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
@@ -197,7 +195,6 @@ const AdminDashboard: React.FC = () => {
 
             <div className="container mx-auto max-w-6xl px-6 py-16 md:py-24 relative z-10 flex-grow">
                 {!user || !isAdmin ? (
-                    /* ── Login / Access Denied ─────────────────────────────── */
                     <div className="max-w-md mx-auto text-center space-y-8 py-16">
                         <div className="space-y-4">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-black uppercase tracking-widest">
@@ -234,7 +231,6 @@ const AdminDashboard: React.FC = () => {
                         </div>
                     </div>
                 ) : (
-                    /* ── Authenticated Admin Dashboard ─────────────────────── */
                     <div className="space-y-10">
 
                         {/* Header */}
@@ -257,7 +253,6 @@ const AdminDashboard: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* ── Invite Link Generator ─────────────────────────── */}
                         <div className="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-6 md:p-8 space-y-5">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div className="space-y-1">
@@ -331,7 +326,6 @@ const AdminDashboard: React.FC = () => {
                             )}
                         </div>
 
-                        {/* ── Testimonials List ─────────────────────────────── */}
                         <div className="space-y-4">
                             <h2 className="text-lg font-bold text-white">
                                 Submitted Reviews
@@ -400,8 +394,6 @@ const AdminDashboard: React.FC = () => {
                     </div>
                 )}
             </div>
-
-            <FooterSection />
         </div>
     );
 };

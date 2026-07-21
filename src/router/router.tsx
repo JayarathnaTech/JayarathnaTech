@@ -9,6 +9,7 @@ import SubmitTestimonial from "../pages/SubmitTestimonial.tsx";
 import AdminDashboard from "../pages/AdminDashboard.tsx";
 import NotFound from "../pages/NotFound.tsx";
 import RootLayout from "../layout/RootLayout.tsx";
+import AdminLayout from "../layout/AdminLayout.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
         element: <RootLayout/>,
         children: [
             {
-                path: '/',
+                index: true,
                 element: <Home/>
             },
             {
@@ -43,14 +44,20 @@ export const router = createBrowserRouter([
                 path: '/submit-testimonial/:token',
                 element: <SubmitTestimonial/>
             },
+        ]
+    },
+    {
+        path: '/admin',
+        element: <AdminLayout/>,
+        children: [
             {
-                path: '/admin',
+                index: true,
                 element: <AdminDashboard/>
             },
-            {
-                path: '*',
-                element: <NotFound/>
-            }
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound/>
     }
 ], { basename: '/JayarathnaTech' })
