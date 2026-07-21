@@ -44,6 +44,9 @@ const NavigationBar :React.FC= () => {
                     <NavLink to='/services' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
                         Services
                     </NavLink>
+                    <NavLink to='/projects' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
+                        Projects
+                    </NavLink>
                     <NavLink to='/contact' className='bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-full font-semibold shadow-lg shadow-indigo-600/20 hover:shadow-indigo-500/30 transition-all duration-300 scale-95 hover:scale-100 cursor-pointer'>
                         Contact Us
                     </NavLink>
