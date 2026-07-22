@@ -15,7 +15,6 @@ interface Project {
 
 const CATEGORIES = ['Web App', 'Mobile', 'Cloud', 'AI/ML', 'Other'];
 
-// Compress uploaded image file to lightweight WebP/JPEG Base64 string
 const compressImage = (file: File, maxWidth = 800, quality = 0.8): Promise<string> => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
