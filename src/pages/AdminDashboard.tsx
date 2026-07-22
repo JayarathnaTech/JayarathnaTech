@@ -131,7 +131,7 @@ const AdminDashboard: React.FC = () => {
                 expiresAt,
             });
 
-            const url = `${window.location.origin}/submit-testimonial/${token}`;
+            const url = `${window.location.origin}/JayarathnaTech/submit-testimonial/${token}`;
             setInviteLink({ token, url, expiresAt });
             setCopied(false);
         } catch (err: any) {
@@ -205,11 +205,11 @@ const AdminDashboard: React.FC = () => {
                             </div>
                             <h1 className="text-4xl font-black text-white tracking-tight">Authentication Required</h1>
                             <p className="text-slate-400 text-sm leading-relaxed">
-                                Please sign in with your Google account to manage client testimonials.
+                                Please sign in with your Google account to login admin dashboard.
                             </p>
                         </div>
                         {errorMessage && (
-                            <div className="p-4 rounded-xl text-xs font-medium border bg-rose-500/10 border-rose-500/20 text-rose-400 break-words">
+                            <div className="p-4 rounded-xl text-xs font-medium border bg-rose-500/10 border-rose-500/20 text-rose-400 wrap-break-word">
                                 {errorMessage}
                             </div>
                         )}
@@ -235,7 +235,6 @@ const AdminDashboard: React.FC = () => {
                     </div>
                 ) : (
                     <div className="space-y-10">
-
                         {/* Header */}
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-900 pb-8">
                             <div className="space-y-1">
@@ -256,7 +255,6 @@ const AdminDashboard: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Navigation Tabs */}
                         <div className="flex border-b border-slate-800 space-x-6">
                             <button
                                 onClick={() => setActiveTab('testimonials')}

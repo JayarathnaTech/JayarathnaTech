@@ -97,7 +97,6 @@ const SubmitTestimonial: React.FC = () => {
         }
     };
 
-    // ── Token checking state ──────────────────────────────────────────────────
     if (tokenStatus === 'checking') {
         return (
             <div className="min-h-screen bg-slate-950 flex items-center justify-center">
@@ -112,13 +111,12 @@ const SubmitTestimonial: React.FC = () => {
         );
     }
 
-    // ── Invalid or expired token ──────────────────────────────────────────────
     if (tokenStatus === 'invalid' || tokenStatus === 'expired') {
         return (
             <div className="relative overflow-hidden bg-slate-950 min-h-screen flex flex-col justify-between">
                 <div className="absolute top-[-5%] right-[-10%] w-160 h-160 rounded-full bg-rose-900/10 blur-[120px] pointer-events-none" />
                 <div className="absolute bottom-[10%] left-[-10%] w-140 h-140 rounded-full bg-slate-900/20 blur-[120px] pointer-events-none" />
-                <div className="flex-grow flex items-center justify-center px-6">
+                <div className="grow flex items-center justify-center px-6">
                     <div className="text-center space-y-6 max-w-md">
                         <div className="mx-auto w-20 h-20 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-9 h-9 text-rose-400">
@@ -149,10 +147,8 @@ const SubmitTestimonial: React.FC = () => {
         );
     }
 
-    // ── Valid token — show form ────────────────────────────────────────────────
     return (
         <div className="relative overflow-hidden bg-slate-950 pb-8 min-h-screen flex flex-col justify-between">
-            {/* Background Glows */}
             <div className="absolute top-[-5%] right-[-10%] w-160 h-160 rounded-full bg-indigo-900/20 blur-[120px] pointer-events-none" />
             <div className="absolute bottom-[10%] left-[-10%] w-140 h-140 rounded-full bg-fuchsia-900/10 blur-[120px] pointer-events-none" />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-35 pointer-events-none" />
@@ -160,7 +156,6 @@ const SubmitTestimonial: React.FC = () => {
             <div className="container mx-auto max-w-6xl px-6 py-16 md:py-24 relative z-10 flex-grow">
                 <div className="grid lg:grid-cols-12 gap-12 items-start">
 
-                    {/* Left Column: Form */}
                     <div className="lg:col-span-7 space-y-8">
                         <div className="space-y-4">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-black uppercase tracking-widest">
