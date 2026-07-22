@@ -1,12 +1,26 @@
-import React from 'react';
-import {Link, NavLink} from "react-router";
+import React, { useState } from 'react';
+import { Link, NavLink } from "react-router";
+import { Menu, X } from 'lucide-react';
 
-const NavigationBar :React.FC= () => {
+const NavigationBar: React.FC = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const navLinks = [
+        { to: '/', label: 'Home' },
+        { to: '/about', label: 'About' },
+        { to: '/services', label: 'Services' },
+        { to: '/projects', label: 'Projects' },
+    ];
+
     return (
-        <nav className='sticky top-0 z-50 backdrop-blur-lg bg-slate-950/75 border-b border-slate-800/40 px-6 py-4 shadow-xl transition-all duration-300'>
+        <nav className='sticky top-0 z-50 backdrop-blur-lg bg-slate-950/75 border-b border-slate-800/40 px-4 md:px-6 py-4 shadow-xl transition-all duration-300'>
             <div className="container mx-auto flex justify-between items-center">
-                <Link to='/'>
-                    <div className='w-56 h-12 flex items-center'>
+                <Link to='/' className="z-50">
+                    <div className='w-48 md:w-56 h-10 md:h-12 flex items-center'>
                         <svg id="njtools-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="97.5 229.5 547.4 104.5" className="w-full h-full object-contain">
                             <defs>
                                 <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -34,21 +48,51 @@ const NavigationBar :React.FC= () => {
                     </div>
                 </Link>
 
-                <div className='flex items-center space-x-8 text-slate-300 font-medium text-sm md:text-base'>
-                    <NavLink to='/' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
-                        Home
-                    </NavLink>
-                    <NavLink to='/about' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
-                        About
-                    </NavLink>
-                    <NavLink to='/services' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
-                        Services
-                    </NavLink>
-                    <NavLink to='/projects' className={({isActive}) => `relative py-1 hover:text-indigo-400 transition-colors duration-200 ${isActive ? 'text-indigo-400 font-semibold' : ''}`}>
-                        Projects
-                    </NavLink>
+                <div className='hidden md:flex items-center space-x-8 text-slate-300 font-medium text-sm md:text-base'>
+                    {navLinks.map((link) => (
+                        <NavLink
+                            key={link.to}
+                            to={link.to}
+                            className={({isActive}) => `relative py-1 transition-colors duration-200 group ${isActive ? 'text-indigo-400 font-semibold' : 'hover:text-indigo-400'}`}
+                        >
+                            {link.label}
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 transition-all duration-300 group-hover:w-full"></span>
+                        </NavLink>
+                    ))}
+
                     <NavLink to='/contact' className='bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-full font-semibold shadow-lg shadow-indigo-600/20 hover:shadow-indigo-500/30 transition-all duration-300 scale-95 hover:scale-100 cursor-pointer'>
-                        Contact Us
+                        Contact
+                    </NavLink>
+                </div>
+
+                <button
+                    onClick={toggleMenu}
+                    className="md:hidden z-50 text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-800/50 transition-colors focus:outline-none"
+                    aria-label="Toggle Menu"
+                >
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
+
+            <div className={`fixed inset-x-0 top-0 pt-24 pb-6 px-6 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 md:hidden transition-all duration-300 ease-in-out z-40 shadow-2xl ${isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-10 invisible'}`}>
+                <div className="flex flex-col space-y-5 text-center">
+                    {navLinks.map((link) => (
+                        <NavLink
+                            key={link.to}
+                            to={link.to}
+                            onClick={() => setIsOpen(false)}
+                            className={({isActive}) => `block py-2 text-base font-medium border-b border-slate-900 transition-colors ${isActive ? 'text-indigo-400 font-bold' : 'text-slate-300 hover:text-indigo-400'}`}
+                        >
+                            {link.label}
+                        </NavLink>
+                    ))}
+
+                    <NavLink
+                        to='/contact'
+                        onClick={() => setIsOpen(false)}
+                        className='inline-block bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-full font-semibold shadow-lg shadow-indigo-600/20 transition-all text-center'
+                    >
+                        Contact
                     </NavLink>
                 </div>
             </div>
